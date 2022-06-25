@@ -1,0 +1,9 @@
+Download IRIS dataset from UCI repository.
+
+1. Create a database in Mongo DB and import the dataset.
+
+2. Create a multinode configuration in Hadoop. Make 3 partitions from IRIS schema in the mongodb and save these partions in different nodes.
+
+3. Write Map Reduce functions to calculate the mean of all the attributes present in both the data sets.
+
+4. Use Weka tool to classify and cluster the given data with different (min 3) approaches.

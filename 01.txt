@@ -1,0 +1,29 @@
+// Login as a root user
+->	su root
+->	password: hadoop
+
+// Change directory to the driver's location
+->	cd /var/lib/ambari-server/resources/stacks/HDP/3.0/services/
+
+// Clone MongoDB driver for Hadoop
+->	git clone https://github.com/nikunjness/mongo-ambari.git
+
+// Restart server
+->	ambari-server restart
+
+// Go to Dashboard, login as admin
+->	Go to Service/Add Service
+->	Select MongoDB
+->	Complete the installation
+->	Restart server, and check MongoDB in the panel
+
+// Install Python and Packages for MP and mongodb
+->	yum install https://repo.ius.io/ius-release-e17.rpm https://dl.fedoraproject.org/pub/epel/epel-release-7.noarch.rpm
+->	yum install python-pip
+->	pip install pathlib
+->	pip install mrjob==0.7.4
+->	pip install PyYAML==5.4.1
+->	pip install pymongo==3.4.0
+
+// Install pymongo to use a pyspark script to load data into mongodb collections
+->	
