@@ -3,11 +3,11 @@ from mrjob.step import MRStep
 
 class IrisMR(MRJob):
     def step(self):
-        return [MRStep(mapper = self.mapper, reducer = self.reducer)]
+        return [MRStep(mapper=self.mapper, reducer=self.reducer)]
 
     def mapper(self, _, line):
         (sl,sw,pl,pw,category) = line.split(',')
-        yield (category, (sl, 1))
+        yield (category, (float(sl), 1))
 
     def _reducer_combiner(self, category, value_count):
         avg, cnt = 0, 0
