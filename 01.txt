@@ -27,3 +27,13 @@
 
 // Install pymongo to use a pyspark script to load data into mongodb collections
 ->	
+
+
+// Order
+1. Put dataset into Hadoop fs
+2. Install python, mongoldb etc
+3. Import data inside mongoldb
+4. Segment data into three sets
+5. Map reduce function
+6. Create a README for explanation flow
+7. Weka tool
