@@ -21,7 +21,7 @@ class IrisMR(MRJob):
 
     def _reducer_combiner(self, category, value_count):
         avg, cnt = 0, 0
-        for val, c in value_cnt:
+        for val, c in value_count:
             avg = (avg * cnt + val * c) / (cnt + c)
             cnt += c
         return (category, (avg, cnt))
