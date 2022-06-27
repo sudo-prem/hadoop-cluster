@@ -1,2 +1,2 @@
 # hadoop-cluster
-Run a MapReduce function in a Hadoop Cluster to find average
+Run MapReduce function in a Hadoop Cluster to find average
