@@ -1,2 +1,2 @@
 # hadoop-cluster
-Data for Hadoop Clusters to wget using PUTTY
+Run a MapReduce function in a Hadoop Cluster to find average
