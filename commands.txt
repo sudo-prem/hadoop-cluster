@@ -1,0 +1,42 @@
+
+========== MongoDB ===============================================================================================================================
+
+->	mongoimport -d da_project -c scores --type csv --file iris.csv --headerline
+->	db.scores.find().pretty()
+
+->	var s1 = db.scores.find().limit(50).toArray();
+->	var s2 = db.scores.find().skip(50).limit(50).toArray();
+->	var s3 = db.scores.find().skip(100).limit(50).toArray();
+
+->	db.segment_1.insert(s1);
+->	db.segment_2.insert(s2);
+->	db.segment_3.insert(s3);
+
+->	mongoexport --db=da_project --collection=segment_1 --type=csv --fields=s_length,s_width,p_length,p_width,class --out=output/segment_1.csv
+->	mongoexport --db=da_project --collection=segment_2 --type=csv --fields=s_length,s_width,p_length,p_width,class --out=output/segment_2.csv
+->	mongoexport --db=da_project --collection=segment_3 --type=csv --fields=s_length,s_width,p_length,p_width,class --out=output/segment_3.csv
+
+
+========== Hadoop ================================================================================================================================
+
+// Restart server
+->	ambari-server restart
+
+// Install Python and Packages for MP and mongodb
+->	yum install https://repo.ius.io/ius-release-e17.rpm https://dl.fedoraproject.org/pub/epel/epel-release-7.noarch.rpm
+->	yum install python-pip
+->	pip install pathlib
+->	pip install mrjob==0.7.4
+->	pip install PyYAML==5.4.1
+->	pip install pymongo==3.4.0
+
+// HDFS
+->	hadoop fs -ls
+->	hadoop fs -copyFromLocal fn.ext fn.ext
+->	hadoop fs -mkdir project_name
+
+// Working with Dataset
+->	Import dataset using wget from GitHub
+->	Run MR program - python IrisMR.py iris.csv
+
+=================================================================================================================================================
